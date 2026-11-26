@@ -37,6 +37,16 @@ cPanel › **Setup Node.js App** › **Create Application**:
 
 Kaydedin (uygulama henüz boş, hata vermesi normal).
 
+`softturk-site` klasöründe zaten gerçek bir `node_modules` klasörü varsa cPanel uygulamayı oluşturmaz ("application should not contain folder/file with such name" hatası). Önce kenara alın, oluşturduktan sonra `guncelle.sh`'yi yeniden çalıştırın; betik modülleri cPanel'in bağladığı klasöre koyar:
+
+```sh
+mv ~/softturk-site/node_modules ~/softturk-site/node_modules.gecici
+# cPanel'de Create, sonra:
+sh ~/softturk-web-kod/deploy/guncelle.sh && rm -rf ~/softturk-site/node_modules.gecici
+```
+
+Site açılmazsa hata kaydı: `~/softturk-site/stderr.log`.
+
 ## 3. Siteyi indirin
 Terminal'de:
 
