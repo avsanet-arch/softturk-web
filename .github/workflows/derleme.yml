@@ -35,6 +35,8 @@ jobs:
           cp -r public "$S/"
           mkdir -p "$S/.next" && cp -r .next/static "$S/.next/"
           mkdir -p "$S/scripts" && cp scripts/*.mjs "$S/scripts/"
+          # scripts/sifre.mjs bcryptjs ister; derleme onu paketin içine gömdüğü için ayrıca eklenir (sunucuda npm install gerekmesin)
+          mkdir -p "$S/node_modules" && rm -rf "$S/node_modules/bcryptjs" && cp -r node_modules/bcryptjs "$S/node_modules/"
           echo "$GITHUB_SHA" > "$S/KAYNAK"
           tar czf /tmp/softturk-web.tar.gz -C "$S" .
       - name: Yükle
