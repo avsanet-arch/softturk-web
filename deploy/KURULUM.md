@@ -3,9 +3,16 @@
 Site, otel programından ayrı bir Node.js uygulamasıdır. GitHub'da derlenir, sunucu hazır paketi indirir.
 İçerik (referanslar, blog yazıları, gelen talepler, ayarlar, yüklenen resimler) site klasöründeki `veri` klasöründe JSON dosyası olarak durur; veritabanı gerekmez.
 
-## 1. Alan adı
-1. `softturk.com` alan adını satın alın.
-2. DNS'te `@` ve `www` için A kaydını sunucunun IP adresine yönlendirin (otel programıyla aynı sunucu: `89.252.187.118`).
+## 1. Alan adı (Squarespace DNS)
+`softturk.com` Squarespace'te kayıtlı. Squarespace › Domains › softturk.com › **DNS** › Custom records:
+
+| Tür | Host | Değer |
+|---|---|---|
+| A | `@` | `89.252.187.118` (otel programıyla aynı sunucu) |
+| CNAME | `www` | `softturk.com` |
+
+Squarespace'in varsayılan "Squarespace Defaults" kayıtlarını (site yönlendirmesi) silin. Kayıtların yayılması birkaç dakika ile birkaç saat sürebilir.
+cPanel'de alan adını **Domains › Create A New Domain** ile ekleyin (Squarespace'teki NS kayıtları değişmez, yalnız A kaydı sunucumuzu gösterir).
 
 ## 2. cPanel'de Node.js uygulaması
 cPanel › **Setup Node.js App** › **Create Application**:
