@@ -302,13 +302,13 @@
   {
     "id": "ref-ozaynakliyat",
     "slug": "ozaynakliyat",
-    "baslik": "ozaynakliyat.com",
-    "musteri": "",
+    "baslik": "Avşa Özay Nakliyat",
+    "musteri": "Avşa Özay Nakliyat",
     "sektor": "Nakliyat",
-    "url": "https://ozaynakliyat.com",
-    "ozet": "Nakliyat firması için kurumsal web sitesi.",
-    "aciklama": "Nakliyat firmasının hizmetlerini tanıtan ve teklif almayı kolaylaştıran kurumsal web sitesi.",
-    "resim": "",
+    "url": "https://avsaadasiozaynakliyat.com",
+    "ozet": "Avşa Adası merkezli evden eve ve şehirler arası nakliyat firması için kurumsal web sitesi.",
+    "aciklama": "Avşa Adası'ndan Türkiye'nin her yerine evden eve, ofis ve şehirler arası taşımacılık yapan firma için hazırlanan site.\n\n## Sitede neler var\n- Hizmet sayfaları: evden eve, ofis taşıma, şehirler arası nakliyat\n- Nereden nereye, taşınma türü ve tarih soran teklif formu\n- Tek dokunuşla arama ve WhatsApp düğmeleri\n- Araç filosu galerisi ve müşteri yorumları\n- Telefona uyumlu, hızlı açılan tasarım",
+    "resim": "/referans/ozaynakliyat.webp",
     "etiketler": [
       "Kurumsal site"
     ],
