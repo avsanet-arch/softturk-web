@@ -1,0 +1,322 @@
+[
+  {
+    "id": "ref-porterasotel",
+    "slug": "porterasotel",
+    "baslik": "Porteras Otel Kuşadası",
+    "musteri": "Kuşadası",
+    "sektor": "Konaklama",
+    "url": "https://porterasotel.com",
+    "ozet": "Kuşadası yat limanı karşısındaki butik otel için üç dilli, rezervasyon odaklı web sitesi.",
+    "aciklama": "Deniz manzaralı butik otelin odalarını, restoranını ve havuzunu anlatan, misafiri doğrudan rezervasyona yönlendiren bir site.\n\n## Neler yaptık\n- Oda listesi ve gecelik fiyatlar\n- Tarih ve kişi seçerek müsaitlik sorgusu, rezervasyon talep formu\n- Restoran masa ayırtma\n- Galeri, misafir yorumları, sık sorulan sorular\n- Türkçe, İngilizce ve Almanca\n- WhatsApp ile hızlı iletişim",
+    "resim": "/referans/porterasotel.webp",
+    "etiketler": [
+      "Otel sitesi",
+      "Rezervasyon",
+      "Çok dilli"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": true,
+    "yayinda": true,
+    "sira": 1,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-bodrumtransferfiyatlari",
+    "slug": "bodrumtransferfiyatlari",
+    "baslik": "Bodrum Transfer Fiyatları",
+    "musteri": "Bodrum",
+    "sektor": "Turizm / transfer",
+    "url": "https://bodrumtransferfiyatlari.com",
+    "ozet": "Bodrum havalimanı transferi, tekne turu ve yat kiralama için fiyat hesaplayıcılı rezervasyon sitesi.",
+    "aciklama": "Bir seyahat acentesinin havalimanı ve şehirler arası transfer hizmetlerini satan site. Ziyaretçi güzergâhını seçer, fiyatı anında görür ve rezervasyonunu bırakır.\n\n## Neler yaptık\n- Nereden-nereye, tarih, kişi ve bavul ile fiyat hesaplayıcı\n- Rezervasyon formu ve kampanya kodu\n- Bodrum bölgeleri ve şehirler arası güzergâh sayfaları (SEO)\n- Araç filosu, tekne turu ve yat kiralama sayfaları\n- Blog ve sık sorulan sorular, Türkçe ve İngilizce",
+    "resim": "/referans/bodrumtransferfiyatlari.webp",
+    "etiketler": [
+      "Transfer",
+      "Fiyat hesaplama",
+      "SEO"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": true,
+    "yayinda": true,
+    "sira": 2,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-otel-gen-tr",
+    "slug": "otel-gen-tr",
+    "baslik": "otel.gen.tr",
+    "musteri": "Türkiye geneli",
+    "sektor": "Konaklama portalı",
+    "url": "https://otel.gen.tr",
+    "ozet": "Türkiye'nin 81 ilinde otel, pansiyon ve apartları listeleyen, komisyonsuz ulusal konaklama portalı.",
+    "aciklama": "Misafiri aracısız olarak tesise ulaştıran bir konaklama rehberi. Tesisler il, ilçe, tür ve tatil temasına göre listelenir; ziyaretçi doğrudan arar, WhatsApp'tan yazar ya da teklif ister.\n\n## Neler yaptık\n- On binden fazla tesisi kaldırabilen listeleme altyapısı\n- İl, ilçe, tesis türü ve tatil temasına göre filtre ve harita\n- Tesis sayfaları, teklif formu ve WhatsApp\n- İşletme sahiplenme ve ücretli vitrin paketleri\n- Gezi planları, restoranlar ve kampanyalar",
+    "resim": "/referans/otel-gen-tr.webp",
+    "etiketler": [
+      "Portal",
+      "Listeleme",
+      "SEO"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": true,
+    "yayinda": true,
+    "sira": 3,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-avsa",
+    "slug": "avsa",
+    "baslik": "avsa.com",
+    "musteri": "Avşa Adası",
+    "sektor": "Konaklama / ada rehberi",
+    "url": "https://avsa.com",
+    "ozet": "Avşa Adası'nın otel, motel, pansiyon ve apartlarını listeleyen; feribot saatleri ve ada rehberiyle birlikte sunan site.",
+    "aciklama": "Adaya gelecek misafirin ihtiyaç duyduğu her şeyi bir arada toplayan bir rehber: konaklama, ulaşım ve gezi.\n\n## Neler yaptık\n- Otel, motel, pansiyon ve apart listesi; denize sıfır, havuzlu, kahvaltılı gibi filtreler\n- Tesis kartlarında fiyat, arama ve WhatsApp düğmeleri\n- Feribot saatleri, bilet fiyatları ve sefer iptal duyuruları\n- Plaj ve gezi rehberi yazıları, haberler\n- İşletme başvuru formu",
+    "resim": "/referans/avsa.webp",
+    "etiketler": [
+      "Bölge rehberi",
+      "Listeleme",
+      "Ulaşım bilgisi"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": true,
+    "yayinda": true,
+    "sira": 4,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-erdek",
+    "slug": "erdek",
+    "baslik": "erdek.com",
+    "musteri": "Erdek",
+    "sektor": "Konaklama / bölge rehberi",
+    "url": "https://erdek.com",
+    "ozet": "Erdek ve Kapıdağ Yarımadası'ndaki otel, pansiyon ve apartlar için komisyonsuz konaklama ve bölge rehberi.",
+    "aciklama": "Ocaklar, Tatlısu ve çevre köylerdeki tesisleri tek yerde toplayan, misafiri doğrudan işletmeyle buluşturan site.\n\n## Neler yaptık\n- Otel, pansiyon, apart ve motel listesi, kategori filtreleri\n- Arama ve WhatsApp düğmeleri\n- Köy ve koy rehberleri, otobüs ve feribot saatleri\n- Taksi durakları, hava durumu, nöbetçi eczane\n- İşletme ekleme",
+    "resim": "/referans/erdek.webp",
+    "etiketler": [
+      "Bölge rehberi",
+      "Listeleme"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 5,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-tatil-gen-tr",
+    "slug": "tatil-gen-tr",
+    "baslik": "tatil.gen.tr",
+    "musteri": "Türkiye geneli",
+    "sektor": "Tatil portalı",
+    "url": "https://tatil.gen.tr",
+    "ozet": "81 ilde otel, pansiyon ve gezilecek yerleri harita üzerinden sunan tatil portalı.",
+    "aciklama": "Deniz, kayak, termal, yayla ve şehir tatili temalarıyla Türkiye'yi haritadan keşfettiren bir tatil rehberi.\n\n## Neler yaptık\n- Tarih, kişi sayısı ve yere göre arama\n- Haritadan il seçimi, tatil türü kartları\n- Aylara göre sezon önerileri\n- Tatil rehberi yazıları\n- Tesis ekleme ve işletme girişi",
+    "resim": "/referans/tatil-gen-tr.webp",
+    "etiketler": [
+      "Portal",
+      "Harita",
+      "Tatil rehberi"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 6,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-bodrum-gen-tr",
+    "slug": "bodrum-gen-tr",
+    "baslik": "bodrum.gen.tr",
+    "musteri": "Bodrum",
+    "sektor": "Şehir rehberi",
+    "url": "https://www.bodrum.gen.tr",
+    "ozet": "Bodrum'un konaklama, restoran, plaj, beach club ve gezi rehberi.",
+    "aciklama": "Bodrum'a gelen ya da Bodrum'da yaşayanların aradığı işletmeleri ve bilgileri bölge bölge sunan şehir rehberi.\n\n## Neler yaptık\n- Arama ve bölge seçici, kategori menüsü\n- Öne çıkan işletmeler ve bölge kartları\n- Etkinlik takvimi, blog ve bölge rehberleri\n- Nöbetçi eczane ve ulaşım bilgileri\n- İşletme ekleme",
+    "resim": "/referans/bodrum-gen-tr.webp",
+    "etiketler": [
+      "Şehir rehberi",
+      "Listeleme"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 7,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-marmaris-gen-tr",
+    "slug": "marmaris-gen-tr",
+    "baslik": "marmaris.gen.tr",
+    "musteri": "Marmaris",
+    "sektor": "Şehir rehberi",
+    "url": "https://www.marmaris.gen.tr",
+    "ozet": "Marmaris ve Bozburun Yarımadası için konaklama, koy, tekne turu ve restoran rehberi.",
+    "aciklama": "Marmaris'te kalacak yer, gidilecek koy ve katılınacak tekne turunu tek yerden bulduran şehir rehberi.\n\n## Neler yaptık\n- Konaklama listesi ve arama\n- Koy ve plaj ulaşım rehberi, tekne turları\n- Hava durumu, nöbetçi eczane, dolmuş ve havalimanı ulaşımı\n- Blog yazıları ve işletmeler için ücretsiz QR menü",
+    "resim": "/referans/marmaris-gen-tr.webp",
+    "etiketler": [
+      "Şehir rehberi",
+      "Tekne turu"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 8,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-izmir-gen-tr",
+    "slug": "izmir-gen-tr",
+    "baslik": "izmir.gen.tr",
+    "musteri": "İzmir",
+    "sektor": "Şehir rehberi",
+    "url": "https://www.izmir.gen.tr",
+    "ozet": "İzmir'in 30 ilçesi için nöbetçi eczane, ulaşım, gezi ve konaklama rehberi.",
+    "aciklama": "Turistten çok İzmirliye de hitap eden, günlük bilgilerle sürekli ziyaret edilen bir şehir rehberi.\n\n## Neler yaptık\n- İlçe seçici, konaklama, restoran, plaj kategorileri\n- Nöbetçi eczane, hava durumu, su ve elektrik kesintileri\n- Metro, vapur ve havalimanı uçuş bilgileri\n- Gezi yazıları ve işletme ekleme",
+    "resim": "/referans/izmir-gen-tr.webp",
+    "etiketler": [
+      "Şehir rehberi",
+      "Günlük bilgi"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 9,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-antalya-gen-tr",
+    "slug": "antalya-gen-tr",
+    "baslik": "antalya.gen.tr",
+    "musteri": "Antalya",
+    "sektor": "Şehir rehberi",
+    "url": "https://antalya.gen.tr",
+    "ozet": "Antalya için konaklama ve gezi rehberi.",
+    "aciklama": "Antalya'da konaklama ve gezi için hazırladığımız şehir rehberi.",
+    "resim": "/referans/antalya-gen-tr.webp",
+    "etiketler": [
+      "Şehir rehberi"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 10,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-takvim",
+    "slug": "takvim",
+    "baslik": "takvim.com",
+    "musteri": "Türkiye geneli",
+    "sektor": "Bilgi / içerik sitesi",
+    "url": "https://www.takvim.com",
+    "ozet": "Resmi tatiller, bayramlar, namaz vakitleri ve hicri/rumi takvimle 2003'ten beri yayındaki takvim sitesi.",
+    "aciklama": "Takvim ve zaman konusunda Türkiye'de en çok bilinen sitelerden biri.\n\n## Neler yaptık\n- 2000-2035 arası yıllık takvim, basılabilir PDF takvimler\n- Resmi tatiller ve bayram tarihleri, tatile kalan gün sayacı\n- İl seçmeli namaz vakitleri, imsakiye ve iftar sayacı\n- Miladi, hicri ve rumi takvim çevirici\n- İş günü ve tarih farkı hesaplama, döviz kurları",
+    "resim": "/referans/takvim.webp",
+    "etiketler": [
+      "İçerik sitesi",
+      "Hesaplama araçları",
+      "Yüksek trafik"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": true,
+    "yayinda": true,
+    "sira": 11,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-bobinaj",
+    "slug": "bobinaj",
+    "baslik": "bobinaj.com",
+    "musteri": "Türkiye geneli",
+    "sektor": "Sektörel firma rehberi",
+    "url": "https://bobinaj.com",
+    "ozet": "Türkiye genelinde bobinaj atölyeleri ve elektrik motoru servislerini listeleyen sektörel rehber.",
+    "aciklama": "Elektrik motoru arızası olan kişiyi şehrindeki bobinaj ustasıyla buluşturan bir firma dizini.\n\n## Neler yaptık\n- Şehir ve hizmet alanına göre filtre, firma arama\n- Firma detay sayfaları ve telefon\n- Ücretsiz teklif iste formu\n- Rehber yazılar ve firma ekleme",
+    "resim": "/referans/bobinaj.webp",
+    "etiketler": [
+      "Firma rehberi",
+      "Teklif formu",
+      "SEO"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 12,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-hamam-gen-tr",
+    "slug": "hamam-gen-tr",
+    "baslik": "Flowers Hamam",
+    "musteri": "İstanbul, Florya",
+    "sektor": "Hamam / spa",
+    "url": "https://hamam.gen.tr",
+    "ozet": "Florya'daki Türk hamamı için hizmet, fiyat ve kampanya tanıtım sitesi.",
+    "aciklama": "Kese köpük, masaj ve gelin hamamı paketlerini fiyatlarıyla anlatan, WhatsApp'tan randevu aldıran işletme sitesi.\n\n## Neler yaptık\n- Hizmet ve fiyat listesi, paketler ve kampanyalar\n- Kadın ve erkek çalışma saatleri\n- Galeri\n- WhatsApp randevu ve telefon",
+    "resim": "/referans/hamam-gen-tr.webp",
+    "etiketler": [
+      "İşletme sitesi",
+      "Randevu"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 13,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-sauna-gen-tr",
+    "slug": "sauna-gen-tr",
+    "baslik": "Flowers Health Club",
+    "musteri": "İstanbul, Florya",
+    "sektor": "Spor ve sağlık kulübü",
+    "url": "https://sauna.gen.tr",
+    "ozet": "Havuz, hamam, sauna, fitness, pilates ve masaj hizmetleri sunan sağlık kulübünün sitesi.",
+    "aciklama": "Kulübün dokuz farklı hizmetini, üyelik ve kampanyalarını tek sayfada toplayan site.\n\n## Neler yaptık\n- Hizmet kartları ve fiyat listesi\n- Üyelik ve pilates fiyatları, kampanyalar\n- Kadın / erkek günleri ve çalışma saatleri\n- Galeri, sık sorulan sorular, WhatsApp randevu",
+    "resim": "/referans/sauna-gen-tr.webp",
+    "etiketler": [
+      "İşletme sitesi",
+      "Spa"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 14,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  },
+  {
+    "id": "ref-ozaynakliyat",
+    "slug": "ozaynakliyat",
+    "baslik": "ozaynakliyat.com",
+    "musteri": "",
+    "sektor": "Nakliyat",
+    "url": "https://ozaynakliyat.com",
+    "ozet": "Nakliyat firması için kurumsal web sitesi.",
+    "aciklama": "Nakliyat firmasının hizmetlerini tanıtan ve teklif almayı kolaylaştıran kurumsal web sitesi.",
+    "resim": "/referans/ozaynakliyat.webp",
+    "etiketler": [
+      "Kurumsal site"
+    ],
+    "yil": "",
+    "durum": "yayinda",
+    "oneCikan": false,
+    "yayinda": true,
+    "sira": 15,
+    "olusturma": "2026-11-26T00:00:00.000Z"
+  }
+]

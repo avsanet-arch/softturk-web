@@ -1,4 +1,5 @@
 import type { Ayarlar, Referans, Yazi } from "./veri";
+import ILK_REFERANSLAR from "./referanslar-ilk.json";
 
 // İlk kurulumda kullanılan değerler. Hepsi Yönetim › Ayarlar ekranından değiştirilir.
 export const VARSAYILAN_AYARLAR: Ayarlar = {
@@ -30,7 +31,7 @@ export const VARSAYILAN_AYARLAR: Ayarlar = {
   bildirimEpostasi: "",
 };
 
-// İlk referans: kendi ürünümüz. Diğer referanslar yönetim panelinden eklenir.
+// İlk referanslar: kendi ürünümüz + yaptığımız siteler (referanslar-ilk.json). Sonrakiler yönetim panelinden eklenir.
 export const ORNEK_REFERANSLAR: Referans[] = [
   {
     id: "softturk-otel",
@@ -51,6 +52,7 @@ export const ORNEK_REFERANSLAR: Referans[] = [
     sira: 0,
     olusturma: "2026-11-26T00:00:00.000Z",
   },
+  ...(ILK_REFERANSLAR as Referans[]),
 ];
 
 export const ORNEK_YAZILAR: Yazi[] = [
