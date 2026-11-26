@@ -1,0 +1,52 @@
+# Softturk web sitesini derler ve "softturk-web-derleme" sürümüne yükler.
+# Sunucu hazır derlemeyi indirir: deploy/guncelle.sh
+name: Softturk web sitesi
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ["referans-listesi.txt", "**.md"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: softturk-web
+  cancel-in-progress: true
+
+jobs:
+  derle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+      - run: npm test
+      - run: npm run build
+      - name: Paketle
+        run: |
+          S=.next/standalone
+          cp -r public "$S/"
+          mkdir -p "$S/.next" && cp -r .next/static "$S/.next/"
+          mkdir -p "$S/scripts" && cp scripts/*.mjs "$S/scripts/"
+          echo "$GITHUB_SHA" > "$S/KAYNAK"
+          tar czf /tmp/softturk-web.tar.gz -C "$S" .
+      - name: Yükle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp
+          gh release view softturk-web-derleme >/dev/null 2>&1 || \
+            gh release create softturk-web-derleme --title "Softturk web sitesi derlemesi" --notes "main dalının son derlemesi (otomatik)." --latest=false
+          for i in 1 2 3 4 5; do
+            gh release upload softturk-web-derleme softturk-web.tar.gz --clobber && break
+            if [ "$i" = 5 ]; then echo "Yükleme 5 denemede başarısız"; exit 1; fi
+            echo "Yükleme başarısız, $((i * 15)) sn sonra yeniden denenecek ($i/5)"; sleep $((i * 15))
+          done
+          gh release edit softturk-web-derleme --target "$GITHUB_SHA" --notes "Softturk web sitesi son derlemesi. Kaynak: $GITHUB_SHA"

@@ -1,0 +1,46 @@
+# Referans sitelerinin ekran görüntülerini alır ve aynı dala ekler.
+# Çalıştırma: referans-listesi.txt değişince ya da Actions › Referans ekran görüntüleri › Run workflow
+name: Referans ekran görüntüleri
+
+on:
+  push:
+    paths: ["referans-listesi.txt", "scripts/ekran-al.cjs", ".github/workflows/referans-ekran.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cek:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i --no-save playwright@1.56.1 && npx playwright install --with-deps chromium
+      - run: node scripts/ekran-al.cjs
+      - name: WebP'ye çevir
+        run: |
+          pip install -q pillow
+          mkdir -p public/referans
+          cat ekran-gecici/rapor.json
+          python3 - <<'PY'
+          import glob, os
+          from PIL import Image
+          for p in glob.glob("ekran-gecici/*.png"):
+              ad = os.path.basename(p)[:-4]
+              im = Image.open(p).convert("RGB")
+              w = 1440
+              im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+              im.save(f"public/referans/{ad}.webp", "WEBP", quality=78, method=6)
+          PY
+          rm -rf ekran-gecici
+      - name: Dala ekle
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/referans
+          git diff --cached --quiet && exit 0
+          git commit -m "Referans ekran görüntüleri (otomatik)"
+          git push

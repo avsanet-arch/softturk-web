@@ -1,16 +1,16 @@
 #!/bin/sh
 # Softturk web sitesini sunucuda kurar / günceller.
-# Site sunucuda derlenmez: GitHub'da derlenen hazır paket indirilir (bkz. .github/workflows/softturk-web.yml).
+# Site sunucuda derlenmez: GitHub'da derlenen hazır paket indirilir (bkz. .github/workflows/derleme.yml).
 #
 # Kullanım (Terminal'de):
-#   sh ~/otel-yazilimi/softturk-web/deploy/guncelle.sh
+#   sh ~/softturk-web-kod/deploy/guncelle.sh
 #
 # Site klasörü varsayılan ~/softturk-site (SITE_KLASORU ile değişir).
 # Klasördeki "veri" (referanslar, yazılar, talepler, yüklenen resimler) ve ".env" dosyasına dokunulmaz.
 set -e
 
 HEDEF="${SITE_KLASORU:-$HOME/softturk-site}"
-API="https://api.github.com/repos/avsanet-arch/otel-yazilimi/releases/tags/softturk-web-derleme"
+API="https://api.github.com/repos/avsanet-arch/softturk-web/releases/tags/softturk-web-derleme"
 TOKEN_FILE="${GITHUB_TOKEN_FILE:-$HOME/.github-token}"
 if [ ! -s "$TOKEN_FILE" ]; then
   echo "GitHub anahtarı bulunamadı: $TOKEN_FILE (otel programı kurulumundaki anahtar kullanılır)"

@@ -40,9 +40,11 @@ Kaydedin (uygulama henüz boş, hata vermesi normal).
 ## 3. Siteyi indirin
 Terminal'de:
 
+İlk seferde kodu sunucuya alın (otel programının GitHub anahtarı kullanılır; anahtar yalnız otel-yazilimi deposuna izinliyse GitHub'da anahtarın erişimine softturk-web deposunu da ekleyin):
+
 ```sh
-cd ~/otel-yazilimi && git pull
-sh softturk-web/deploy/guncelle.sh
+git clone "https://x-access-token:$(cat ~/.github-token)@github.com/avsanet-arch/softturk-web.git" ~/softturk-web-kod
+sh ~/softturk-web-kod/deploy/guncelle.sh
 ```
 
 ## 4. Yönetim şifresi
@@ -87,7 +89,7 @@ Ziyaretçi çerez bandında "Kabul et" demezse Google'a çerezsiz (Consent Mode)
 ## Güncelleme
 Kod değişip GitHub'da derleme bitince (Actions › Softturk web sitesi):
 ```sh
-cd ~/otel-yazilimi && git pull && sh softturk-web/deploy/guncelle.sh
+cd ~/softturk-web-kod && git pull && sh deploy/guncelle.sh
 ```
 
 ## Yedek
