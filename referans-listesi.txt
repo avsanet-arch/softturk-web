@@ -5,7 +5,7 @@ avsa https://avsa.com
 erdek https://erdek.com
 otel-gen-tr https://otel.gen.tr
 tatil-gen-tr https://tatil.gen.tr
-ozaynakliyat https://ozaynakliyat.com
+ozaynakliyat http://ozaynakliyat.com
 bobinaj https://bobinaj.com
 bodrumtransferfiyatlari https://bodrumtransferfiyatlari.com
 hamam-gen-tr https://hamam.gen.tr

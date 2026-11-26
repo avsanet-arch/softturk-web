@@ -37,6 +37,7 @@ fs.mkdirSync(cikti, { recursive: true });
       console.log("HATA", ad, e.message);
     }
   }
+  fs.mkdirSync(path.join(kok, "public/referans"), { recursive: true });
   fs.writeFileSync(path.join(kok, "public/referans/rapor.json"), JSON.stringify(rapor, null, 2));
   await b.close();
 })();
