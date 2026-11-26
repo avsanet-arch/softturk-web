@@ -14,3 +14,4 @@ antalya-gen-tr https://antalya.gen.tr
 marmaris-gen-tr https://marmaris.gen.tr
 izmir-gen-tr https://izmir.gen.tr
 takvim https://takvim.com
+ozaynakliyat https://avsaadasiozaynakliyat.com
