@@ -1,4 +1,4 @@
-// referans-listesi.txt'deki sitelerin ekran görüntüsünü alır → public/referans/<ad>.webp (1600x1000) + <ad>-tel.webp
+// referans-listesi.txt'deki sitelerin ekran görüntüsünü alır → public/referans/<ad>.webp (1600x1000)
 // GitHub Actions'ta çalışır (Playwright + sharp yerine Chromium'un kendi WebP çıktısı yok, PNG alınıp Python PIL ile çevrilir)
 const { chromium, devices } = require("playwright");
 const fs = require("fs");
@@ -25,11 +25,6 @@ fs.mkdirSync(cikti, { recursive: true });
       const baslik = await p.title();
       const aciklama = await p.locator('meta[name="description"]').getAttribute("content").catch(() => "");
       await p.close();
-      const t = await b.newPage({ ...devices["iPhone 13"], locale: "tr-TR" });
-      await t.goto(url, { waitUntil: "domcontentloaded", timeout: 45000 });
-      await t.waitForTimeout(3000);
-      await t.screenshot({ path: path.join(cikti, `${ad}-tel.png`) });
-      await t.close();
       rapor.push({ ad, url, durum: "tamam", baslik, aciklama });
       console.log("tamam", ad, baslik);
     } catch (e) {
@@ -37,7 +32,6 @@ fs.mkdirSync(cikti, { recursive: true });
       console.log("HATA", ad, e.message);
     }
   }
-  fs.mkdirSync(path.join(kok, "public/referans"), { recursive: true });
-  fs.writeFileSync(path.join(kok, "public/referans/rapor.json"), JSON.stringify(rapor, null, 2));
+  fs.writeFileSync(path.join(kok, "ekran-gecici/rapor.json"), JSON.stringify(rapor, null, 2));
   await b.close();
 })();
