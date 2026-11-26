@@ -1,0 +1,17 @@
+# Referans sitelerinin ekran görüntüsü listesi (GitHub Actions › Referans ekran görüntüleri)
+# Her satır: dosya-adi adres
+porterasotel https://porterasotel.com
+avsa https://avsa.com
+erdek https://erdek.com
+otel-gen-tr https://otel.gen.tr
+tatil-gen-tr https://tatil.gen.tr
+ozaynakliyat https://ozaynakliyat.com
+bobinaj https://bobinaj.com
+bodrumtransferfiyatlari https://bodrumtransferfiyatlari.com
+hamam-gen-tr https://hamam.gen.tr
+sauna-gen-tr https://sauna.gen.tr
+bodrum-gen-tr https://bodrum.gen.tr
+antalya-gen-tr https://antalya.gen.tr
+marmaris-gen-tr https://marmaris.gen.tr
+izmir-gen-tr https://izmir.gen.tr
+takvim https://takvim.com
