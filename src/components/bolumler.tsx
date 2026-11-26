@@ -3,6 +3,7 @@ import { Ikon, WhatsappIkon } from "./ikon";
 import type { Ayarlar, Referans, Yazi } from "@/lib/veri";
 import { ANA_OZELLIKLER, DIGER_OZELLIKLER, SSS, type Ozellik } from "@/lib/urun";
 import { telefonLink, whatsappLink, tarihYaz } from "@/lib/site";
+import { FiyatKartlari } from "./fiyat-kartlari";
 
 export function Maddeler({ liste }: { liste: string[] }) {
   return (
@@ -57,27 +58,59 @@ export function DigerOzellikler() {
 export function Paketler({ a }: { a: Ayarlar }) {
   return (
     <>
-      <div className="izgara izgara-4">
-        {a.paketler.map((p) => (
-          <div key={p.ad} className={`kart paket${p.one_cikan ? " one" : ""}`}>
-            {p.one_cikan && <span className="etiket">En çok tercih edilen</span>}
-            <h3>{p.ad}</h3>
-            <div className="oda">{p.odalar}</div>
-            {p.aylik ? (
-              <div className="fiyat">{p.aylik} <small>/ ay</small></div>
-            ) : (
-              <div className="fiyat" style={{ fontSize: "1.35rem" }}>Size özel fiyat</div>
-            )}
-            <div className="yillik">{p.yillik ? `Yıllık ödemede ${p.yillik}` : "Oda sayınıza göre teklif"}</div>
-            <Maddeler liste={["Tüm özellikler dahil", "Sınırsız kullanıcı", "Otomatik KBS", "Kurulum ve eğitim"]} />
-            <Link href="/demo" className={`btn ${p.one_cikan ? "btn-ana" : "btn-ince"}`}>
-              {p.aylik ? "Hemen başlayın" : "Teklif alın"}
-            </Link>
-          </div>
-        ))}
-      </div>
+      <FiyatKartlari paketler={a.paketler} kdv={a.fiyatKdv} kampanya={a.kampanyaAcik} />
       {a.fiyatNotu && <p className="fiyat-notu">{a.fiyatNotu}</p>}
     </>
+  );
+}
+
+export function EkModuller({ a }: { a: Ayarlar }) {
+  if (!a.ekModuller.length) return null;
+  return (
+    <div className="izgara izgara-3">
+      {a.ekModuller.map((m) => (
+        <div key={m.ad} className="mini modul">
+          <div className="ikon-kutu"><Ikon ad={m.ikon || "yildiz"} boyut={20} /></div>
+          <div>
+            <h3>{m.ad}</h3>
+            <p>{m.aciklama}</p>
+            <div className="modul-fiyat">{m.fiyat || "Fiyat sorunuz"}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+const basHarf = (ad: string) => ad.split(/\s+/).slice(0, 2).map((k) => k[0]?.toLocaleUpperCase("tr")).join("");
+
+export function Kullananlar({ a }: { a: Ayarlar }) {
+  if (!a.kullananlar.length) return null;
+  return (
+    <div className={`izgara izgara-${Math.min(3, Math.max(1, a.kullananlar.length))} kullananlar`}>
+      {a.kullananlar.map((k) => (
+        <figure key={k.ad} className="kart kullanan">
+          <div className="kullanan-ust">
+            <span className="kullanan-harf" aria-hidden="true">{basHarf(k.ad)}</span>
+            <div>
+              <h3>{k.url ? <a href={k.url} target="_blank" rel="noopener">{k.ad}</a> : k.ad}</h3>
+              <div className="kullanan-yer"><Ikon ad="konum" boyut={15} /> {k.yer}</div>
+            </div>
+          </div>
+          <div className="kullanan-bilgi">
+            {k.tur && <span>{k.tur}</span>}
+            {k.oda && <span>{k.oda}</span>}
+            {k.baslangic && <span>Başlangıç: {k.baslangic}</span>}
+          </div>
+          {k.yorum && (
+            <blockquote>
+              “{k.yorum}”
+              {k.kisi && <figcaption>{k.kisi}</figcaption>}
+            </blockquote>
+          )}
+        </figure>
+      ))}
+    </div>
   );
 }
 

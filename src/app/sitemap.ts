@@ -8,7 +8,7 @@ export const revalidate = 3600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [r, y] = await Promise.all([referanslar(), yazilar()]);
   const sabit: [string, number][] = [
-    ["/", 1], ["/otel-programi", 0.9], ["/demo", 0.8], ["/web-tasarim", 0.8], ["/referanslar", 0.7], ["/blog", 0.6], ["/iletisim", 0.6], ["/kvkk", 0.2], ["/cerez-politikasi", 0.2],
+    ["/", 1], ["/otel-programi", 0.9], ["/fiyatlar", 0.9], ["/demo", 0.8], ["/web-tasarim", 0.8], ["/referanslar", 0.7], ["/blog", 0.6], ["/iletisim", 0.6], ["/kvkk", 0.2], ["/cerez-politikasi", 0.2],
   ];
   return [
     ...sabit.map(([yol, priority]) => ({ url: tam(yol), priority })),

@@ -2,9 +2,10 @@ import Link from "next/link";
 import { ayarlariGetir } from "@/lib/veri";
 import { sayfaMeta, sssJsonLd, yolJsonLd, SITE_URL, tam } from "@/lib/site";
 import { SSS } from "@/lib/urun";
+import { ISO_PARA, paraBirimi, sayiOku } from "@/lib/fiyat";
 import { Ikon } from "@/components/ikon";
 import { JsonLd } from "@/components/json-ld";
-import { CagriBandi, Dalga, DigerOzellikler, OzellikListesi, Paketler, Sss } from "@/components/bolumler";
+import { CagriBandi, Dalga, DigerOzellikler, Kullananlar, OzellikListesi, Paketler, Sss } from "@/components/bolumler";
 import { TalepFormu } from "@/components/talep-formu";
 
 export const revalidate = 300;
@@ -18,7 +19,7 @@ export const metadata = sayfaMeta({
 
 export default async function OtelProgrami() {
   const a = await ayarlariGetir();
-  const fiyatli = a.paketler.filter((p) => p.aylik);
+  const fiyatli = a.paketler.filter((p) => sayiOku(p.aylik));
   const urun = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -34,7 +35,7 @@ export default async function OtelProgrami() {
     publisher: { "@id": `${SITE_URL}/#firma` },
     featureList: ["Oda planı", "Rezervasyon", "Otomatik KBS bildirimi", "Fiyat ve müsaitlik", "Kasa ve gün sonu", "Raporlar", "QR menü", "Kat hizmetleri"],
     ...(fiyatli.length
-      ? { offers: fiyatli.map((p) => ({ "@type": "Offer", name: `${p.ad} (${p.odalar})`, description: `Aylık ${p.aylik}`, availability: "https://schema.org/InStock" })) }
+      ? { offers: fiyatli.map((p) => ({ "@type": "Offer", name: `${p.ad} (${p.odalar})`, description: `Aylık ${p.aylik}`, price: sayiOku(p.aylik), priceCurrency: ISO_PARA[paraBirimi(p.aylik)] ?? "TRY", url: `${SITE_URL}/fiyatlar`, availability: "https://schema.org/InStock" })) }
       : {}),
   };
   return (
@@ -96,8 +97,21 @@ export default async function OtelProgrami() {
             <p>Bütün özellikler her pakette var. Sadece oda sayınıza göre ödersiniz.</p>
           </div>
           <Paketler a={a} />
+          <p style={{ textAlign: "center", marginTop: 18 }}><Link href="/fiyatlar" className="btn btn-ince">Ek modüller ve fiyat ayrıntıları <Ikon ad="ok" boyut={16} /></Link></p>
         </div>
       </section>
+
+      {a.kullananlar.length > 0 && (
+        <section className="bolum" id="kullananlar">
+          <div className="kap">
+            <div className="ust-baslik">
+              <span className="rozet">Referanslar</span>
+              <h2>Programı kullanan işletmeler</h2>
+            </div>
+            <Kullananlar a={a} />
+          </div>
+        </section>
+      )}
 
       <section className="bolum" id="sss">
         <div className="kap">

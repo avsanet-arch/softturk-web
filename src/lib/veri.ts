@@ -14,7 +14,21 @@ import { VARSAYILAN_AYARLAR, ORNEK_REFERANSLAR, ORNEK_YAZILAR } from "./varsayil
 export const VERI_KLASORU = process.env.VERI_KLASORU || path.join(process.cwd(), "veri");
 export const YUKLEME_KLASORU = path.join(VERI_KLASORU, "yuklenenler");
 
-export type Paket = { ad: string; odalar: string; aylik: string; yillik: string; one_cikan?: boolean };
+export type Paket = {
+  ad: string;
+  odalar: string;
+  aylik: string; // kampanyalı / güncel aylık fiyat, ör. "900 ₺"
+  yillik: string; // yıllık peşin fiyat
+  eskiAylik?: string; // üstü çizili liste fiyatı (kampanya yoksa boş)
+  eskiYillik?: string;
+  one_cikan?: boolean;
+};
+
+/** Fiyatlar sayfasındaki ücretli ek modüller */
+export type EkModul = { ad: string; aciklama: string; fiyat: string; ikon: string };
+
+/** Otel programını kullanan işletmeler (fiyat ve program sayfalarında) */
+export type Kullanan = { ad: string; tur: string; yer: string; oda: string; baslangic: string; url: string; yorum: string; kisi: string };
 
 export type Ayarlar = {
   firmaAdi: string;
@@ -39,6 +53,14 @@ export type Ayarlar = {
   programAdresi: string; // https://otel.avsa.com
   paketler: Paket[];
   fiyatNotu: string;
+  fiyatKdv: string; // "KDV hariç" gibi, fiyatların yanında küçük yazı
+  kampanyaAcik: boolean;
+  kampanyaBaslik: string;
+  kampanyaMetni: string;
+  kampanyaBitis: string; // YYYY-AA-GG, geri sayım için (boşsa sayım yok)
+  denemeGun: string; // ücretsiz deneme günü (boşsa yazılmaz)
+  ekModuller: EkModul[];
+  kullananlar: Kullanan[];
   bildirimEpostasi: string; // yeni talep gelince haber verilecek adres
 };
 

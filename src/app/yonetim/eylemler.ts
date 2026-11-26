@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { cikisYap, girisEngelliMi, girisYap, yoneticiGerekli } from "@/lib/oturum";
 import {
-  ayarlariKaydet, referansKaydet, referansSil, resimKaydet, talepIsaretle, talepSil, yaziKaydet, yaziSil, type Paket,
+  ayarlariKaydet, referansKaydet, referansSil, resimKaydet, talepIsaretle, talepSil, yaziKaydet, yaziSil, type Paket, type EkModul, type Kullanan,
 } from "@/lib/veri";
 
 const m = (f: FormData, k: string, n = 500) => String(f.get(k) ?? "").trim().slice(0, n);
@@ -112,8 +112,28 @@ export async function ayarKaydetEylemi(_: unknown, f: FormData) {
   for (let i = 0; i < 6; i++) {
     const ad = m(f, `paket${i}_ad`, 40);
     if (!ad) continue;
-    paketler.push({ ad, odalar: m(f, `paket${i}_odalar`, 40), aylik: m(f, `paket${i}_aylik`, 30), yillik: m(f, `paket${i}_yillik`, 30), one_cikan: f.get(`paket${i}_one`) === "on" });
+    paketler.push({
+      ad, odalar: m(f, `paket${i}_odalar`, 40), aylik: m(f, `paket${i}_aylik`, 30), yillik: m(f, `paket${i}_yillik`, 30),
+      eskiAylik: m(f, `paket${i}_eskiAylik`, 30), eskiYillik: m(f, `paket${i}_eskiYillik`, 30), one_cikan: f.get(`paket${i}_one`) === "on",
+    });
   }
+  const ekModuller: EkModul[] = [];
+  for (let i = 0; i < 30; i++) {
+    const ad = m(f, `modul${i}_ad`, 60);
+    if (!ad) continue;
+    ekModuller.push({ ad, aciklama: m(f, `modul${i}_aciklama`, 240), fiyat: m(f, `modul${i}_fiyat`, 40), ikon: m(f, `modul${i}_ikon`, 20).replace(/[^a-z]/g, "") });
+  }
+  const kullananlar: Kullanan[] = [];
+  for (let i = 0; i < 40; i++) {
+    const ad = m(f, `kul${i}_ad`, 80);
+    if (!ad) continue;
+    const url = m(f, `kul${i}_url`, 200);
+    kullananlar.push({
+      ad, tur: m(f, `kul${i}_tur`, 40), yer: m(f, `kul${i}_yer`, 100), oda: m(f, `kul${i}_oda`, 30), baslangic: m(f, `kul${i}_baslangic`, 40),
+      url: /^https?:\/\//i.test(url) ? url : "", yorum: m(f, `kul${i}_yorum`, 400), kisi: m(f, `kul${i}_kisi`, 80),
+    });
+  }
+  const bitis = m(f, "kampanyaBitis", 10);
   const ga = m(f, "gaOlcumKimligi", 30), ads = m(f, "adsKimligi", 30);
   if (ga && !/^G-[A-Z0-9]+$/.test(ga)) return { hata: "Analytics ölçüm kimliği G- ile başlamalı (ör. G-ABC123XYZ)." };
   if (ads && !/^AW-\d+$/.test(ads)) return { hata: "Google Ads kimliği AW- ile başlamalı (ör. AW-123456789)." };
@@ -139,6 +159,14 @@ export async function ayarKaydetEylemi(_: unknown, f: FormData) {
     programAdresi: m(f, "programAdresi", 200),
     paketler,
     fiyatNotu: m(f, "fiyatNotu", 300),
+    fiyatKdv: m(f, "fiyatKdv", 40),
+    denemeGun: m(f, "denemeGun", 4).replace(/\D/g, ""),
+    kampanyaAcik: f.get("kampanyaAcik") === "on",
+    kampanyaBaslik: m(f, "kampanyaBaslik", 60),
+    kampanyaMetni: m(f, "kampanyaMetni", 300),
+    kampanyaBitis: /^\d{4}-\d{2}-\d{2}$/.test(bitis) ? bitis : "",
+    ekModuller,
+    kullananlar,
     bildirimEpostasi: m(f, "bildirimEpostasi", 120),
   });
   yenile();

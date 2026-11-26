@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/json-ld";
 
 const MENU = [
   { ad: "Otel Programı", yol: "/otel-programi" },
+  { ad: "Fiyatlar", yol: "/fiyatlar" },
   { ad: "Web Tasarım", yol: "/web-tasarim" },
   { ad: "Referanslar", yol: "/referanslar" },
   { ad: "Blog", yol: "/blog" },
@@ -53,7 +54,7 @@ export default async function SiteSablon({ children }: { children: React.ReactNo
             <h4>Ürün</h4>
             <Link href="/otel-programi">Otel programı</Link>
             <Link href="/otel-programi#ozellikler">Özellikler</Link>
-            <Link href="/otel-programi#paketler">Paketler</Link>
+            <Link href="/fiyatlar">Fiyatlar ve paketler</Link>
             <Link href="/demo">Ücretsiz demo</Link>
           </div>
           <div>
